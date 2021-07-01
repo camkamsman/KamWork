@@ -1,0 +1,34 @@
+import _tkinter
+
+from tkinter import *
+
+root = Tk( )
+root.title("Welcome to CamKam")
+root.iconbitmap( )
+root.geometry("300x200")
+
+mainloop( )
+
+splash_root = Tk( )
+splash_root.title("Welcome to CamKam")
+splash_root.geometry("300x200")
+splash_root.overrideredirect(True)
+
+splash_label = Label(splash_root, text="Welcome to CamKams", font=("Times New Roman", 30))
+splash_label.pack(pady=20)
+
+def main_window( ):
+    splash_root.destroy()
+
+    root = Tk( )
+    root.title("Welcome to CamKam")
+    root.iconbitmap( )
+    root.geometry("300x200")
+
+
+    main_label = Label(root, text="Main Screen")
+    main_label.pack(pady=20)
+
+splash_root.after(3000, main_window)
+
+mainloop( )
